@@ -1,79 +1,66 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# System Specifications
 
-# Getting Started
+- **Device Name**: Salh
+- **Processor**: 11th Gen Intel(R) Core(TM) i7-1195G7 @ 2.90GHz, 1.80 GHz
+- **Installed RAM**: 16.0 GB (15.8 GB usable)
+- **Device ID**: E0431910-C206-44D1-9D0E-45035AE8A0FE
+- **Product ID**: 00342-21928-85103-AAOEM
+- **System Type**: 64-bit operating system, x64-based processor
+- **Pen and Touch**: Pen and touch support with 10 touch points
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Development Environment Setup
 
-## Step 1: Start the Metro Server
+### Android Studio and SDK Installation
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+1. **Install Android Studio**:
+   - Download from the [official download page](https://developer.android.com/studio).
+   - Ensure the installation of Android SDK, SDK Platform, Android Virtual Device, and Performance (Intel ® HAXM) for emulator acceleration.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+2. **Configure Android Studio**:
+   - Open Android Studio to complete the initial setup wizard for the latest Android SDK.
 
-```bash
-# using npm
-npm start
+### Node.js and npm Installation
 
-# OR using Yarn
-yarn start
-```
+1. **Download Node.js**:
+   - Visit [Node.js website](https://nodejs.org/) and select the LTS version (64-bit Windows Installer).
 
-## Step 2: Start your Application
+2. **Install Node.js**:
+   - Run the installer and follow the prompts with default settings.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+3. **Verify Installation**:
+   - In a command prompt, type `node -v` and `npm -v`.
 
-### For Android
+### Java Development Kit (JDK)
 
-```bash
-# using npm
-npm run android
+1. **Download JDK 17**:
+   - Go to [Oracle JDK 17 archive page](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) and download the Windows x64 installer.
 
-# OR using Yarn
-yarn android
-```
+2. **Install JDK 17**:
+   - Execute the installer with default settings.
 
-### For iOS
+3. **Configure Environment Variables**:
+   - Set `JAVA_HOME` to your JDK path.
+   - Ensure `ANDROID_HOME` is set to the Android SDK location.
+   - Add the SDK's platform-tools to the system Path.
 
-```bash
-# using npm
-npm run ios
+## Running on Device (Android)
 
-# OR using Yarn
-yarn ios
-```
+### Enable USB Debugging
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+1. Activate "Developer options" by going to Settings → About phone and tapping Build number seven times.
+2. Enable "USB debugging" in Developer options.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+### Connect Device and Run App
 
-## Step 3: Modifying your App
+1. Connect the device via USB and verify with `adb devices`.
+2. Run `npm run android` in your project root.
 
-Now that you have successfully run the app, let's modify it.
+### Connecting to Development Server
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+- **Via USB**: Use `adb reverse tcp:8081 tcp:8081`.
+- **Via Wi-Fi**: Set the development machine's IP in the app's Dev Settings.
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+## Creating a React Native Project
 
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+1. **Project Initialization**: `npx react-native@latest init ProjectName`.
+2. **Running the Project**: Start with `npm start`. For Android, use `npm run android`.
